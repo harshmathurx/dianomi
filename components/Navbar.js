@@ -2,10 +2,12 @@ import Link from "next/link"
 
 const Navbar = () => {
     return (
-        <div className="flex flex-row justify-center">
-            <div className="flex flex-row items-center gap-12 p-5 w-11/12 my-10 text-[#FAFAFA]">
-                <h1 className="font-MagicRetro text-5xl">DIANOMI</h1>
-                <span className="font-Sora font-bold text-lg"><Link href='#'>EXPLORE</Link></span>
+        <div className="flex flex-row justify-center w-10/12 items-center">
+            <div className="flex flex-row items-center gap-12 my-10 text-[#FAFAFA]">
+                <Link href='/' className="font-MagicRetro text-5xl">
+                    <h1>DIANOMI</h1>
+                </Link>
+                <span className="font-Sora font-bold text-lg"><Link href='/explore'>EXPLORE</Link></span>
                 <span className="font-Sora font-bold text-lg"><Link href='#'>COMMUNITY</Link></span>
                 <span className="font-Sora font-bold text-lg flex flex-row">
                     <Link href='#'>LIVESTREAMS</Link>

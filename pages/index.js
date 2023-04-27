@@ -16,7 +16,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="bg-[#07050F] w-11/12 flex-col flex text-white mx-auto p-5">
+      <main className="bg-[#07050F] w-10/12 flex-col flex text-white mx-auto p-5">
         <Hero />
         <TLDR />
         <Features />
