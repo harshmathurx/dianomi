@@ -10,11 +10,20 @@
   },
   "dependencies": {
     "@next/font": "13.3.1",
+    "@web3modal/ethereum": "^2.3.7",
+    "@web3modal/react": "^2.3.7",
+    "alchemy-sdk": "^2.8.0",
+    "axios": "^1.4.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.1",
+    "ethers": "^5.7.2",
+    "mongoose": "^7.1.0",
     "next": "13.3.1",
+    "next-auth": "^4.22.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-responsive-carousel": "^3.2.23",
+    "wagmi": "^0.12.12"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

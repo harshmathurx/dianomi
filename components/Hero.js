@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="flex flex-row my-4 justify-between mr-4">
+    <div className="flex flex-row mt-8 mb-16 justify-between mr-4">
       <div className="flex flex-col items-start p-0 justify-around w-7/12 pr-12">
         <div>
           <h2 className="font-Sora font-bold text-5xl my-10">Choose your style and Get your Own NFT avatar</h2>
