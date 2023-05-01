@@ -7,10 +7,8 @@ export default function Document() {
     <Html lang="en">
       <Head />
       <body className='bg-[#07050F] text-[#FAFAFA]'>
-        <Navbar />
         <Main />
         <NextScript />
-        <Footer />
       </body>
     </Html>
   )
