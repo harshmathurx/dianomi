@@ -2,7 +2,7 @@ import '../styles/globals.css';
 import { EthereumClient, w3mConnectors, w3mProvider } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import { configureChains, createClient, WagmiConfig } from 'wagmi'
-import { polygonMumbai } from 'wagmi/chains'
+import { polygon, polygonMumbai } from 'wagmi/chains'
 
 const chains = [polygonMumbai]
 const projectId = 'a54c50aff332b1ac56e238a9b09f70ad'

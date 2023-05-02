@@ -1,4 +1,4 @@
-import { Web3Button } from "@web3modal/react"
+import { Web3Button, useWeb3Modal } from "@web3modal/react"
 import Link from "next/link"
 import { useState } from "react";
 
