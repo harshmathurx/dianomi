@@ -1,16 +1,44 @@
 import Link from "next/link"
-import { Web3Button} from "@web3modal/react"
-import { useAccount } from 'wagmi'
-
-export async function getServerSideProps(context) {
-    return {
-        props: {
-            csrfToken: await getCsrfToken(context),
-        },
-    }
-}
+import { Web3Button, useWeb3ModalTheme } from "@web3modal/react"
+import { useEffect } from "react"
+import { useAccount, } from "wagmi"
+import axios from "axios"
 
 const Navbar = () => {
+
+    const { setTheme } = useWeb3ModalTheme()
+    const { address, isConnected } = useAccount()
+
+
+    // Set modal theme
+    setTheme({
+        themeMode: 'dark',
+        themeVariables: {
+            '--w3m-font-family': 'Roboto, sans-serif',
+            '--w3m-accent-color': '#00FFC2',
+            '--w3m-accent-fill-color': '#16141F'
+            // ...
+        }
+    })
+
+    // useEffect(() => {
+    //     const userRegisteration = async () => {
+    //         await axios.post('/api/gamers', {
+    //             address: address
+    //         })
+    //             .then(function (response) {
+    //                 console.log(response);
+    //             })
+    //             .catch(function (error) {
+    //                 console.log(error);
+    //             });
+    //     }
+    //     if(isConnected){
+    //         if(address){
+    //             userRegisteration();
+    //         }
+    //     }
+    // }, [address])
 
     return (
         <div className="flex flex-row items-center gap-12 px-4 pt-11 text-[#FAFAFA] justify-start mx-auto w-10/12">
@@ -26,9 +54,8 @@ const Navbar = () => {
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-[#61FF00]"></span>
                 </span>
             </span>
-            <span className="font-Sora font-bold text-lg"><Link href='#'>FAQ</Link></span>
-            <span className="font-Sora font-bold text-lg"><Link href='#'>CONTACT</Link></span>
-            <Web3Button  />
+            <span className="font-Sora font-bold text-lg"><Link href='#'>LAUNCHPAD</Link></span>
+            <Web3Button />
         </div>
     )
 }

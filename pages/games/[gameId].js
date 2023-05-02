@@ -9,7 +9,7 @@ const Game = () => {
 
     const settings = {
         apiKey: "demo",
-        network: Network.MATIC_MAINNET,
+        network: Network.MATIC_MUMBAI,
     };
 
     const alchemy = new Alchemy(settings);
@@ -38,7 +38,7 @@ const Game = () => {
 
     useEffect(() => {
         console.log(nftsOwned)
-        configureAccess('0xf3fC0971d2C1FcaC46fF671ee336B285A53849e0'.toLowerCase());
+        configureAccess('0xFc5a6601eE821B20E6e5813C2260fa4d750682bc'.toLowerCase());
     }, [nftsOwned, address])
 
     useEffect(() => {
@@ -95,23 +95,23 @@ const Game = () => {
 
                 <div className="flex flex-col my-4">
                     <div className="flex flex-row">
-                        <div className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${fragment == 1 && 'border-b-2'}`} onClick={() => setFragment(1)}>
+                        <div onClick={() => setFragment(1)} className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${fragment == 1 && 'border-b-2'}`}>
                             <p className="font-Sora font-medium text-base">About</p>
                         </div>
-                        {(hasAccess) && <div className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${(fragment == 2) && 'border-b-2'}`} onClick={() => setFragment(2)}>
+                        {(hasAccess) && <div onClick={() => setFragment(2)} className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${(fragment == 2) && 'border-b-2'}`}>
                             <p className="font-Sora font-medium text-base">Announcements</p>
                         </div>}
-                        <div className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${fragment == 3 && 'border-b-2'}`} onClick={() => setFragment(3)}>
+                        <div onClick={() => setFragment(3)} className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${fragment == 3 && 'border-b-2'}`}>
                             <p className="font-Sora font-medium text-base">Collections</p>
                         </div>
-                        {hasAccess && <div className={`flex flex-row cursor-pointer justify-center border-solid border-[#00FFC2] ${fragment == 4 && 'border-b-2'} pl-5 pr-3 py-3`} onClick={() => setFragment(4)}>
+                        {hasAccess && <div onClick={() => setFragment(4)} className={`flex flex-row cursor-pointer justify-center border-solid border-[#00FFC2] ${fragment == 4 && 'border-b-2'} pl-5 pr-3 py-3`}>
                             <p className="font-Sora font-medium text-base">Livestreams</p>
                             <span className="relative flex h-2 w-2 ml-1">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#62ff00c4] opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#61FF00]"></span>
                             </span>
                         </div>}
-                        <div className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${fragment == 5 && 'border-b-2'}`} onClick={() => setFragment(5)}>
+                        <div onClick={() => setFragment(5)} className={`flex flex-col cursor-pointer border-[#00FFC2] border-solid px-3 py-3 ${fragment == 5 && 'border-b-2'}`}>
                             <p className="font-Sora font-medium text-base">Reviews</p>
                         </div>
                     </div>
