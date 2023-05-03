@@ -1,18 +1,38 @@
 import AllGames from "@/components/AllGames"
 import Footer from "@/components/Footer"
 import GameBanner from "@/components/GameBanner"
-import Navbar from "@/components/Navbar"
 import TrendingGames from "@/components/TrendingGames"
-import Image from "next/image"
+import Game from "@/lib/GameSchema"
+import connectDB from "@/lib/connectDB"
 
-const Explore = () => {
+export const getServerSideProps = async () => {
+    await connectDB();
+    let games = await Game.find()
+    console.log(games);
+    games = JSON.parse(JSON.stringify(games));
+    if(games){
+        return {
+            props: {
+                games
+            }
+        }
+    }
+    else{
+        return {
+            props: {
+
+            }
+        }
+    }
+} 
+
+const Explore = ({games}) => {
     return (
         <>
-            <Navbar />
             <div className="w-10/12 flex-col flex text-white mx-auto mb-40">
                 <GameBanner />
-                <TrendingGames />
-                <AllGames />
+                <TrendingGames games={games} />
+                <AllGames games={games} />
             </div>
             <Footer />
         </>

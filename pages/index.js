@@ -17,7 +17,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
       <svg className='w-full absolute -top-12 -z-10' viewBox="0 0 1440 2233" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_f_21_100)">
           <path d="M1498 736.54C1498 1072.58 1191 1345 812.298 1345C433.594 1345 -58 1182.32 -58 846.277C-58 510.234 460.518 41.5398 724.799 287.778C989.08 534.017 1498 400.496 1498 736.54Z" fill="#00FFC2" />
@@ -77,7 +76,7 @@ export default function Home() {
           <filter id="filter2_f_21_100" x="-350" y="0.00012207" width="2284" height="1854" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix" />
             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-            <feGaussianBlur stdDeviation="182" result="effect1_foregroundBlur_21_100" />
+            <feGaussianBlur stdDeviation="182" result="effect1_foreground_21_100" />
           </filter>
         </defs>
       </svg> */}
