@@ -5,6 +5,18 @@
     src: url('../public/MagicRetro.ttf');
 }
 
+.customModal {
+    /* background: #b2dbbf; */
+    color: black;
+    border-radius:8px;
+    height: 70%;
+    width: 33%;
+}
+
+.customOverlay {
+    filter: blur(2px) opacity(95%);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
