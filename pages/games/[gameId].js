@@ -217,10 +217,10 @@ const GamePage = ({ game }) => {
                     </div>
                 </div>
 
-                {(hasAccess) && <div className="flex flex-col">
-                    <h1 className="text-2xl font-Sora font-bold">Aurory</h1>
-                    <h1 className="text-base font-Sora font-normal text-[#808080] my-2">Created By: Mad Armani</h1>
-                    <div className="flex flex-row mt-4">
+                <div className="flex flex-col">
+                    <h1 className="text-2xl font-Sora font-bold">{game?.name}</h1>
+                    <h1 className="text-base font-Sora font-normal text-[#808080] my-2">Created By: {game?.developerName}</h1>
+                    {hasAccess && (<div className="flex flex-row mt-4">
                         {game?.file && <button className="bg-[#00FFC2] rounded-md py-3 px-4 font-Sora font-bold text-[#000000] mr-2">
                             Download Now <span></span>
                         </button>}
@@ -233,8 +233,8 @@ const GamePage = ({ game }) => {
                         {isAdmin && (<button onClick={() => setAnnouncementModal(true)} className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
                             Create Accouncement <span></span>
                         </button>)}
-                    </div>
-                </div>}
+                    </div>)}
+                </div>
 
                 <div className="flex flex-col my-4">
                     <div className="flex flex-row">
@@ -324,27 +324,52 @@ const GamePage = ({ game }) => {
                             <div className="flex flex-col border border-[#272727] px-5 py-4 rounded-xl">
                                 <Image src='/sublime-scare.jpg' className="rounded-xl my-4" width={200} height={200} alt='Sublime Scare' />
                                 <h6 className="text-base font-Sora font-bold my-1">NFT Name</h6>
-                                <h6 className="text-sm text-[#DADADA] font-Sora font-normal">3.2</h6>
+                                <div className="flex flex-row">
+
+                                    <Image width={20} height={20} src='/matic-logo.svg' alt='' />
+                                    <h6 className="text-sm text-[#DADADA] font-Sora font-normal mx-2">
+                                        3.2</h6>
+                                </div>
                             </div>
                             <div className="flex flex-col border border-[#272727] px-5 py-4 rounded-xl">
                                 <Image src='/sublime-scare.jpg' className="rounded-xl my-4" width={200} height={200} alt='Sublime Scare' />
                                 <h6 className="text-base font-Sora font-bold my-1">NFT Name</h6>
-                                <h6 className="text-sm text-[#DADADA] font-Sora font-normal">3.2</h6>
+                                <div className="flex flex-row">
+
+                                    <Image width={20} height={20} src='/matic-logo.svg' alt='' />
+                                    <h6 className="text-sm text-[#DADADA] font-Sora font-normal mx-2">
+                                        3.2</h6>
+                                </div>
                             </div>
                             <div className="flex flex-col border border-[#272727] px-5 py-4 rounded-xl">
                                 <Image src='/sublime-scare.jpg' className="rounded-xl my-4" width={200} height={200} alt='Sublime Scare' />
                                 <h6 className="text-base font-Sora font-bold my-1">NFT Name</h6>
-                                <h6 className="text-sm text-[#DADADA] font-Sora font-normal">3.2</h6>
+                                <div className="flex flex-row">
+
+                                    <Image width={20} height={20} src='/matic-logo.svg' alt='' />
+                                    <h6 className="text-sm text-[#DADADA] font-Sora font-normal mx-2">
+                                        3.2</h6>
+                                </div>
                             </div>
                             <div className="flex flex-col border border-[#272727] px-5 py-4 rounded-xl">
                                 <Image src='/sublime-scare.jpg' className="rounded-xl my-4" width={200} height={200} alt='Sublime Scare' />
                                 <h6 className="text-base font-Sora font-bold my-1">NFT Name</h6>
-                                <h6 className="text-sm text-[#DADADA] font-Sora font-normal">3.2</h6>
+                                <div className="flex flex-row">
+
+                                    <Image width={20} height={20} src='/matic-logo.svg' alt='' />
+                                    <h6 className="text-sm text-[#DADADA] font-Sora font-normal mx-2">
+                                        3.2</h6>
+                                </div>
                             </div>
                             <div className="flex flex-col border border-[#272727] px-5 py-4 rounded-xl">
                                 <Image src='/sublime-scare.jpg' className="rounded-xl my-4" width={200} height={200} alt='Sublime Scare' />
                                 <h6 className="text-base font-Sora font-bold my-1">NFT Name</h6>
-                                <h6 className="text-sm text-[#DADADA] font-Sora font-normal">3.2</h6>
+                                <div className="flex flex-row">
+
+                                    <Image width={20} height={20} src='/matic-logo.svg' alt='' />
+                                    <h6 className="text-sm text-[#DADADA] font-Sora font-normal mx-2">
+                                        3.2</h6>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -404,28 +429,28 @@ const GamePage = ({ game }) => {
                         </div>
                         <div className="flex flex-row justify-evenly">
                             {reviews.map((reviewObj) => (
-                            <div key={reviewObj._id} className="flex flex-col bg-[#272727] rounded-lg justify-between w-3/12 p-5">
-                                <div className="flex flex-row">
-                                    <Image src='/vettel.png' height={40} width={40} className="rounded-full" alt='' />
-                                    <div className="flex flex-col mx-4">
-                                        <p className="font-Sora font-bold text-sm">{reviewObj?.name}</p>
-                                        <div className="flex flex-row">
-                                            <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
-                                            <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
-                                            <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
-                                            <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
-                                            <Image src='/rate-star.svg' width={16} height={16} alt="" />
+                                <div key={reviewObj._id} className="flex flex-col bg-[#272727] rounded-lg justify-between w-3/12 p-5">
+                                    <div className="flex flex-row">
+                                        <Image src='/vettel.png' height={40} width={40} className="rounded-full" alt='' />
+                                        <div className="flex flex-col mx-4">
+                                            <p className="font-Sora font-bold text-sm">{reviewObj?.name}</p>
+                                            <div className="flex flex-row">
+                                                <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
+                                                <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
+                                                <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
+                                                <Image src='/rate-star-color.svg' width={16} height={16} alt="" />
+                                                <Image src='/rate-star.svg' width={16} height={16} alt="" />
+                                            </div>
                                         </div>
                                     </div>
+                                    <p className="font-Sora font-semibold my-4">
+                                        {`"${reviewObj?.review}"`}
+                                    </p>
+                                    {isAdmin && <Link className='flex flex-row p-3 items-center justify-center text-black bg-white rounded-lg' target='_blank' href='https://app.huddle01.com/'>
+                                        <Image src='/huddle.svg' width={20} height={20} alt='huddle' />
+                                        <p className='font-Sora font-semibold mx-2'>Schedule a Call</p>
+                                    </Link>}
                                 </div>
-                                <p className="font-Sora font-semibold my-4">
-                                    {`"${reviewObj?.review}"`}
-                                </p>
-                                {isAdmin && <Link className='flex flex-row p-3 items-center justify-center text-black bg-white rounded-lg' target='_blank' href='https://app.huddle01.com/'>
-                                    <Image src='/huddle.svg' width={20} height={20} alt='huddle' />
-                                    <p className='font-Sora font-semibold mx-2'>Schedule a Call</p>
-                                </Link>}
-                            </div>
                             ))}
                             <div className="flex flex-col bg-[#272727] rounded-lg w-3/12 p-5 justify-between">
                                 <div className="flex flex-row">
