@@ -139,7 +139,6 @@ const GamePage = ({ game }) => {
             .then(data => {
                 if (data) {
                     if (data.error) {
-                        setError(data.error)
                         toast.dismiss()
                         toast.error(data.error)
                     }
@@ -150,7 +149,6 @@ const GamePage = ({ game }) => {
                     }
                 }
                 else {
-                    setError("Something went wrong")
                     toast.dismiss()
                     toast.error("Something went wrong")
                 }
@@ -161,23 +159,49 @@ const GamePage = ({ game }) => {
         toast.dismiss()
         toast.info("Your review is on it's way")
         await axios.post('/api/review', reviewFormData)
-            .then(data => {
+            .then(async data => {
                 if (data) {
                     if (data.error) {
-                        setError(data.error)
                         toast.dismiss()
                         toast.error(data.error)
                     }
                     else {
                         console.log(data);
-                        toast.success("It's here")
-                        router.reload()
+                        toast.success("Sending you some 💸💸")
+                        await axios.post('/api/getMatic', { toAddress: address })
+                            .then((data) => {
+                                if (data.error) {
+                                    toast.dismiss()
+                                    toast.error(data.error)
+                                }
+                                else {
+                                    console.log(data);
+                                    toast.success("Check your wallet for some 🪙")
+                                    router.push(`/`)
+                                }
+                            })
                     }
                 }
                 else {
-                    setError("Something went wrong")
                     toast.dismiss()
                     toast.error("Something went wrong")
+                }
+            })
+
+    }
+
+    const giveRewards = async (url) => {
+        toast.success("Sending you some 💸💸")
+        await axios.post('/api/getMatic', { toAddress: address })
+            .then((data) => {
+                if (data.error) {
+                    toast.dismiss()
+                    toast.error(data.error)
+                }
+                else {
+                    console.log(data);
+                    toast.success("Check your wallet for some 🪙")
+                    router.push(`/`)
                 }
             })
     }
@@ -221,9 +245,9 @@ const GamePage = ({ game }) => {
                     <h1 className="text-2xl font-Sora font-bold">{game?.name}</h1>
                     <h1 className="text-base font-Sora font-normal text-[#808080] my-2">Created By: {game?.developerName}</h1>
                     {hasAccess && (<div className="flex flex-row mt-4">
-                        {game?.file && <button className="bg-[#00FFC2] rounded-md py-3 px-4 font-Sora font-bold text-[#000000] mr-2">
+                        {game?.file && <Link onClick={giveRewards} href={game.file} className="bg-[#00FFC2] rounded-md py-3 px-4 font-Sora font-bold text-[#000000] mr-2">
                             Download Now <span></span>
-                        </button>}
+                        </Link>}
                         {game?.playStoreLink && <Link target='_blank' href={game?.playStoreLink} className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
                             Play Store <span></span>
                         </Link>}
@@ -421,12 +445,12 @@ const GamePage = ({ game }) => {
                                 </button>
                             </div>
                         </Modal>
-                        <div className="flex flex-row justify-between mt-3 mb-6">
+                        {hasAccess && <div className="flex flex-row justify-between mt-3 mb-6">
                             <p>Reviews</p>
                             <button onClick={() => setReviewModal(true)} className="bg-[#00FFC2] rounded-md py-3 px-4 font-Sora font-bold text-black mx-4">
                                 Add Review +<span></span>
                             </button>
-                        </div>
+                        </div>}
                         <div className="flex flex-row justify-evenly">
                             {reviews.map((reviewObj) => (
                                 <div key={reviewObj._id} className="flex flex-col bg-[#272727] rounded-lg justify-between w-3/12 p-5">
