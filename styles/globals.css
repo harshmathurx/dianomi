@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;700;800&display=swap'); 
+
+/* @font-face {
+    font-family: 'MagicRetro';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Magic Retro'), url('https://fonts.cdnfonts.com/s/86060/Magic Retro.woff') format('woff');
+} */
+
 
 @font-face {
     font-family: "MagicRetro";
-    src: url('./MagicRetro.ttf');
+    src: url('https://fontsfree.net//wp-content/fonts/fancy/retro/FontsFree-Net-Magic-Retro.ttf');
 }
 
 .customModal {
