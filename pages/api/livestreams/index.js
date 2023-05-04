@@ -13,6 +13,7 @@ export default async function handler(req, res) {
       try {
         await connectDB();
         if (req.body) {
+          console.log(req.body)
           const response = await axios.post(
             'https://iriko.testing.huddle01.com/api/v1/create-room',
             {

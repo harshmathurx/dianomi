@@ -41,13 +41,17 @@ const Livestreams = () => {
             })
     } 
 
+    useEffect(() => {
+        console.log(formData)
+    },[formData])
+
     return (
         <div>
             <main className="mx-auto max-w-screen-xl my-12 flex flex-col w-4/5 text-white">
                 <h1 className="font-Sora font-bold text-2xl my-4">Start a new live stream</h1>
                 <input value={formData.title} type="text" onChange={handleChange('title')} className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg px-5 py-7 border-[#A6A6A6]" placeholder="Title of the stream"/>
                 <div className="">
-                    <input value={formData.isTokenGated} onChange={handleChange('isTokenGated')} type="checkbox" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" />
+                    <input value={formData.isTokenGated} onChange={() => setFormData({...formData,isTokenGated: !formData.isTokenGated})} type="checkbox" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" />
                     <label className="mx-2">Token Gated?</label>
                 </div>
                 <input value={formData.tokenAddress} disabled={!formData.isTokenGated} type="text" onChange={handleChange('tokenAddress')} required className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg px-5 py-7 border-[#A6A6A6]" placeholder="Contract Address" />

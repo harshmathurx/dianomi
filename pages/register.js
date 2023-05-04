@@ -31,7 +31,7 @@ const Register = () => {
         chain: 'Polygon Mumbai',
         status: '',
         availableOn: '',
-        isTokenGated: Boolean,
+        isTokenGated: false,
         tokenAddress: '',
         developerAddress: address
     })
@@ -189,10 +189,10 @@ const Register = () => {
                             <input value={formData.playStoreLink} onChange={handleChange('playStoreLink')} type="text" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" placeholder="Play Store Link" />
                             <input value={formData.appStoreLink} onChange={handleChange('appStoreLink')} type="text" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" placeholder="App Store Link" />
                             <div className="">
-                                <input value={formData.isTokenGated} defaultChecked={false} onChange={() => setFormData({ ...formData, isTokenGated: !formData.isTokenGated })} type="checkbox" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" />
+                                <input value={formData.isTokenGated} defaultChecked={false} onChange={() => setFormData({ ...formData, isTokenGated: !formData.isTokenGated})} type="checkbox" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" />
                                 <label className="mx-2">Token Gated?</label>
                             </div>
-                            <input value={formData.tokenAddress} disabled={formData.isTokenGated} onChange={handleChange('tokenAddress')} type="text" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" placeholder="Token Address" />
+                            <input value={formData.tokenAddress} disabled={!formData.isTokenGated} onChange={handleChange('tokenAddress')} type="text" className="my-4 text-[#A6A6A6] font-Sora bg-[#07050F] border border-solid rounded-lg p-5 border-[#A6A6A6]" placeholder="Token Address" />
                         </div>)}
                         <div className="flex flex-row justify-between w-full self-center mb-2 mt-6">
                             {formStep > 1 && <button className="bg-[#FFFFFF] rounded-lg text-[#242731] border border-solid border-[#BBBFC1] p-5 font-Sora font-semibold" onClick={prevFormStep}>Previous</button>}

@@ -94,6 +94,7 @@ const Room = ({ room }) => {
                         }
                     })
                     setNftsOwned(nftsList);
+                    console.log(nftsList)
                 }
             }
         }
@@ -112,7 +113,7 @@ const Room = ({ room }) => {
 
     useEffect(() => {
         if (room.isTokenGated) {
-            if (nftsOwned.includes(room.tokenAddress)) {
+            if (nftsOwned.includes(room.tokenAddress.toLowerCase())) {
                 setHasAccess(true);
             }
             else {
