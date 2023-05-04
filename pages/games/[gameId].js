@@ -224,12 +224,12 @@ const GamePage = ({ game }) => {
                         {game?.file && <button className="bg-[#00FFC2] rounded-md py-3 px-4 font-Sora font-bold text-[#000000] mr-2">
                             Download Now <span></span>
                         </button>}
-                        {game?.playStore && <button className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
+                        {game?.playStoreLink && <Link target='_blank' href={game?.playStoreLink} className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
                             Play Store <span></span>
-                        </button>}
-                        {game?.appStore && <button className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
+                        </Link>}
+                        {game?.appStoreLink && <Link target='_blank' href={game?.appStoreLink} className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
                             App Store <span></span>
-                        </button>}
+                        </Link>}
                         {isAdmin && (<button onClick={() => setAnnouncementModal(true)} className="border-[#00FFC2] border-2 rounded-md py-3 px-4 font-Sora font-bold text-[#00FFC2] mx-4">
                             Create Accouncement <span></span>
                         </button>)}

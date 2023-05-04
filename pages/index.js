@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import TLDR from '@/components/TLDR'
 import Features from '@/components/Features'
 import Process from '@/components/Process'
-import Footer from '@/components/Footer'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -17,6 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <Image src='/Grain-Texture.svg' fill className='w-screen absolute -top-12 -z-9 opacity-100'/> */}
       <svg className='w-full absolute -top-12 -z-10' viewBox="0 0 1440 2233" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g filter="url(#filter0_f_21_100)">
           <path d="M1498 736.54C1498 1072.58 1191 1345 812.298 1345C433.594 1345 -58 1182.32 -58 846.277C-58 510.234 460.518 41.5398 724.799 287.778C989.08 534.017 1498 400.496 1498 736.54Z" fill="#00FFC2" />
@@ -51,35 +50,13 @@ export default function Home() {
         <Features />
         <Process />
       </main>
-      <Footer />
-      {/* <svg className='w-full absolute -z-10' viewBox="0 0 1440 2378" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g filter="url(#filter0_f_21_100)">
-          <path d="M1570 1496.46C1570 1160.42 1263 888 884.297 888C505.594 888 14 1050.68 14 1386.72C14 1722.77 532.518 2191.46 796.799 1945.22C1061.08 1698.98 1570 1832.5 1570 1496.46Z" fill="#00FFC2" />
-        </g>
-        <g filter="url(#filter1_f_21_100)">
-          <path d="M1570 1303.46C1570 967.417 1263 695 884.297 695C505.594 695 14 857.68 14 1193.72C14 1529.77 532.518 1998.46 796.799 1752.22C1061.08 1505.98 1570 1639.5 1570 1303.46Z" fill="#F5F5F5" />
-        </g>
-        <g filter="url(#filter2_f_21_100)">
-          <path d="M1570 972.461C1570 636.417 1263 364 884.297 364C505.594 364 14 526.68 14 862.723C14 1198.77 532.518 1667.46 796.799 1421.22C1061.08 1174.98 1570 1308.5 1570 972.461Z" fill="#07050F" />
-        </g>
-        <defs>
-          <filter id="filter0_f_21_100" x="-350" y="524" width="2284" height="1854" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-            <feGaussianBlur stdDeviation="182" result="effect1_foregroundBlur_21_100" />
-          </filter>
-          <filter id="filter1_f_21_100" x="-350" y="331" width="2284" height="1854" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-            <feGaussianBlur stdDeviation="182" result="effect1_foregroundBlur_21_100" />
-          </filter>
-          <filter id="filter2_f_21_100" x="-350" y="0.00012207" width="2284" height="1854" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-            <feGaussianBlur stdDeviation="182" result="effect1_foreground_21_100" />
-          </filter>
-        </defs>
-      </svg> */}
+      <div className="w-full bg-[#00ffc36f] relative">
+        <Image src='/footer-bg.svg' width={1700} height={300} />
+        <div className="flex flex-row justify-between absolute w-11/12 h-5/6 top-2 left-2 items-center">
+          <h1 className='ml-10 font-Sora font-bold text-5xl'>Create.  Explore.<br/>Expand.  Conquer.</h1>
+          <Link href='/register' className='p-4 text-lg font-semibold bg-black text-white '>JOIN THE CLUB</Link>
+        </div>
+      </div>
     </>
   )
 }
