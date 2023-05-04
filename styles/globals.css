@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: "MagicRetro";
-    src: url('../public/MagicRetro.ttf');
+    src: url('./MagicRetro.ttf');
 }
 
 .customModal {
