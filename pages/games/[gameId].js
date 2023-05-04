@@ -91,22 +91,19 @@ const GamePage = ({ game }) => {
     }, [address])
 
     useEffect(() => {
-        console.log(nftsOwned)
-        configureAccess('0xFc5a6601eE821B20E6e5813C2260fa4d750682bc'.toLowerCase());
+        if(game?.isTokenGated){
+            console.log(nftsOwned)
+            if(nftsOwned.includes(game?.tokenAddress.toLowerCase())){
+                setHasAccess(true)
+            }
+            else{
+                setHasAccess(false)
+            }
+        }
+        else{
+            setHasAccess(true)
+        }
     }, [nftsOwned])
-
-    useEffect(() => {
-        console.log("has access => ", hasAccess)
-    }, [hasAccess])
-
-    const configureAccess = (address) => {
-        if (nftsOwned.includes(address)) {
-            setHasAccess(true);
-        }
-        else {
-            setHasAccess(false);
-        }
-    }
 
     const [announcementFormData, setAnnouncementFormData] = useState({
         title: '',
@@ -453,7 +450,7 @@ const GamePage = ({ game }) => {
                         </div>}
                         <div className="flex flex-row justify-evenly">
                             {reviews.map((reviewObj) => (
-                                <div key={reviewObj._id} className="flex flex-col bg-[#272727] rounded-lg justify-between w-3/12 p-5">
+                                <div key={reviewObj._id} className="flex flex-col bg-[#272727] rounded-lg justify-between w-3/12 p-5 mx-4">
                                     <div className="flex flex-row">
                                         <Image src='/vettel.png' height={40} width={40} className="rounded-full" alt='' />
                                         <div className="flex flex-col mx-4">
