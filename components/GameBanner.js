@@ -4,7 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 
 const GameBanner = () => {
     return (
-        <div className="relative h-full mt-10 mb-3 w-full">
+        <div className="h-full w-full relative">
             <Carousel
                 autoPlay
                 emulateTouch
@@ -12,7 +12,9 @@ const GameBanner = () => {
                 interval={2000}
                 preventMovementUntilSwipeScrollTolerance
                 swipeable
-
+                showArrows={false}
+                showIndicators={false}
+                showStatus={false}
             >
                 <div className="flex flex-row bg-[#D46236] rounded-lg my-8 p-8 justify-around">
                     <div className="flex flex-col items-start text-start p-0 w-9/12 pr-12">
@@ -26,7 +28,7 @@ const GameBanner = () => {
                         <div></div>
                     </div>
                     <div className="w-3/12 flex flex-col justify-center items-center">
-                        <Image src='aurory.svg' width={800} height={800} alt="Aurora" />
+                        <Image src='/aurory.svg' width={800} height={800} alt="Aurora" />
                     </div>
                 </div>
                 <div className="flex flex-row bg-[#363ed4] rounded-lg my-8 p-8 justify-around">
@@ -41,7 +43,7 @@ const GameBanner = () => {
                         <div></div>
                     </div>
                     <div className="w-3/12 flex flex-col justify-center items-center">
-                        <Image src='aurory.svg' width={800} height={800} alt="Aurora" />
+                        <Image src='/aurory.svg' width={800} height={800} alt="Aurora" />
                     </div>
                 </div>
                 <div className="flex flex-row bg-[#68d436] rounded-lg my-8 p-8 justify-around">
@@ -56,13 +58,10 @@ const GameBanner = () => {
                         <div></div>
                     </div>
                     <div className="w-3/12 flex flex-col justify-center items-center">
-                        <Image src='aurory.svg' width={800} height={800} alt="Aurora" />
+                        <Image src='/aurory.svg' width={800} height={800} alt="Aurora" />
                     </div>
                 </div>
             </Carousel>
-            {/* <div className="absolute bg-slate-400 left-0 z-10 transform translate-y-3/4 mt-4 top-80">
-                <Image />
-            </div> */}
         </div>
     )
 }
