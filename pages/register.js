@@ -114,7 +114,7 @@ const Register = () => {
         e.persist()
         // Push file to lighthouse node
         // Both file and folder are supported by upload function
-        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODMxOTE3MzAsImV4cCI6MTY4MzIzNDkzMH0.RkZDgRmQO1oNPIMumvkiilBzoICQj6t2BAeOwF8dMZc");
+        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODM5ODYxNTMsImV4cCI6MTY4NDAyOTM1M30.tUQRfvECFu1a2FFSP5IWRsiOGwzGDeCbHuDzYP40TPU");
         console.log('File Status:', output);
         /*
           output:
@@ -133,7 +133,7 @@ const Register = () => {
         e.persist()
         // Push file to lighthouse node
         // Both file and folder are supported by upload function
-        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODMxOTE3MzAsImV4cCI6MTY4MzIzNDkzMH0.RkZDgRmQO1oNPIMumvkiilBzoICQj6t2BAeOwF8dMZc");
+        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODM5ODYxNTMsImV4cCI6MTY4NDAyOTM1M30.tUQRfvECFu1a2FFSP5IWRsiOGwzGDeCbHuDzYP40TPU");
         console.log('File Status:', output);
         /*
           output:
