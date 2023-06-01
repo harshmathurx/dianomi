@@ -10,8 +10,12 @@
 
 @font-face {
     font-family: "MagicRetro";
-    src: url('https://fontsfree.net//wp-content/fonts/fancy/retro/FontsFree-Net-Magic-Retro.ttf');
+    src: url('../fonts/MagicRetro.ttf');
 }
+/* @font-face {
+    font-family: "MagicRetro";
+    src: url('https://fontsfree.net//wp-content/fonts/fancy/retro/FontsFree-Net-Magic-Retro.ttf') format('ttf');
+} */
 
 .customModal {
     /* background: #b2dbbf; */
