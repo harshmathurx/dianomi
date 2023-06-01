@@ -35,7 +35,7 @@ const Navbar = () => {
                 userRegisteration();
             }
         }
-    }, [isConnected])
+    }, [isConnected,address])
 
     return (
         <div className="flex flex-row items-center gap-12 px-4 pt-11 text-[#FAFAFA] justify-start mx-auto w-10/12">

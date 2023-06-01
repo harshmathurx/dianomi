@@ -13,6 +13,8 @@ const Register = () => {
     const [error, setError] = useState('');
     const [success, setSuccess] = useState(false);
 
+    const lighouse_api_key = process.env.NEXT_PUBLIC_LIGHTHOUSE_API_KEY
+
     const [formData, setFormData] = useState({
         name: '',
         developerName: '',
@@ -95,7 +97,7 @@ const Register = () => {
         e.persist()
         // Push file to lighthouse node
         // Both file and folder are supported by upload function
-        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODM5ODYxNTMsImV4cCI6MTY4NDAyOTM1M30.tUQRfvECFu1a2FFSP5IWRsiOGwzGDeCbHuDzYP40TPU");
+        const output = await uploadFileLighthouse(e, lighouse_api_key);
         console.log('File Status:', output);
         /*
           output:
@@ -114,7 +116,7 @@ const Register = () => {
         e.persist()
         // Push file to lighthouse node
         // Both file and folder are supported by upload function
-        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODM5ODYxNTMsImV4cCI6MTY4NDAyOTM1M30.tUQRfvECFu1a2FFSP5IWRsiOGwzGDeCbHuDzYP40TPU");
+        const output = await uploadFileLighthouse(e, lighouse_api_key);
         console.log('File Status:', output);
         /*
           output:
@@ -133,7 +135,7 @@ const Register = () => {
         e.persist()
         // Push file to lighthouse node
         // Both file and folder are supported by upload function
-        const output = await uploadFileLighthouse(e, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNLZXkiOiIweGFkNGE2NjBkODRjMzZhYjY0ZWNlM2JiN2M0ZTNmNzY4ZTY2NDU4OWMiLCJpYXQiOjE2ODM5ODYxNTMsImV4cCI6MTY4NDAyOTM1M30.tUQRfvECFu1a2FFSP5IWRsiOGwzGDeCbHuDzYP40TPU");
+        const output = await uploadFileLighthouse(e, lighouse_api_key);
         console.log('File Status:', output);
         /*
           output:
@@ -148,14 +150,10 @@ const Register = () => {
         console.log('https://gateway.lighthouse.storage/ipfs/' + output.data.Hash);
     }
 
-    useEffect(() => {
-        console.log(formData)
-    }, [formData])
-
     return (
         <div className="">
             <main className="w-4/12 h-5/6 flex-col flex text-white mx-auto px-5 justify-center items-center my-16 ">
-                <div className="h-3/6 flex flex-col rounded-lg bg-[#07050F] px-12 py-16 justify-center">
+                {(isConnected && address) ? (<div className="h-3/6 flex flex-col rounded-lg bg-[#07050F] px-12 py-16 justify-center">
                     <h3 className="text-2xl font-Sora font-bold text-[#00FFC2] my-4">App Information</h3>
                     <p className="text-base font-Sora font-normal text-[#FAFAFA] my-3">Fill in the details below to publish your app on Dianomi!</p>
                     <div className="">
@@ -200,7 +198,9 @@ const Register = () => {
                             {formStep == 3 && <button className="bg-[#FFFFFF] rounded-lg text-[#242731] border border-solid border-[#BBBFC1] py-5 px-8 font-Sora font-semibold" onClick={handleSubmit}>Submit</button>}
                         </div>
                     </div>
-                </div>
+                </div>) : (
+                    <h1>Please Connect Your Wallet</h1>
+                )}
             </main>
         </div>
     )

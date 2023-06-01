@@ -7,7 +7,7 @@ export default async function handler(req,res) {
   const { method } = req
 
   connectDB();
-  switch (method) {
+  switch (method) { 
     case 'POST':
       try {
         await connectDB();
