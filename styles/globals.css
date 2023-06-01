@@ -11,10 +11,13 @@
 @font-face {
     font-family: "MagicRetro";
     src: url('../fonts/MagicRetro.ttf');
+    font-weight: normal;
+    font-style: normal;
 }
+
 /* @font-face {
     font-family: "MagicRetro";
-    src: url('https://fontsfree.net//wp-content/fonts/fancy/retro/FontsFree-Net-Magic-Retro.ttf') format('ttf');
+    src: url('https://fontsfree.net//wp-content/fonts/fancy/retro/FontsFree-Net-Magic-Retro.ttf');
 } */
 
 .customModal {
