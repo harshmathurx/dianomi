@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Features = () => {
     return (
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center w-full overflow-hidden">
             <div className="flex flex-col justify-between items-center text-center">
                 <p className="my-0.5 text-base text-[#00FFC2] font-Sora font-bold">Problem hai? Andar Solution hai!</p>
                 <h6 className="my-0.5 text-3xl font-Sora font-bold">Here’s what you can achieve with Dianomi</h6>

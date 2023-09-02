@@ -34,7 +34,6 @@ const Explore = ({games}) => {
                 <TrendingGames games={games} />
                 <AllGames games={games} />
             </div>
-            <Footer />
         </>
     )
 }

@@ -38,7 +38,7 @@ const Navbar = () => {
     }, [isConnected,address])
 
     return (
-        <div className="flex flex-row items-center gap-12 px-4 pt-11 text-[#FAFAFA] justify-start mx-auto w-10/12">
+        <div className="flex flex-row items-center gap-12 px-4 pt-11 text-[#FAFAFA] justify-start mx-auto w-10/12 overflow-hidden">
             <Link href='/' className="font-MagicRetro text-5xl">
                 <h1>DIANOMI</h1>
             </Link>

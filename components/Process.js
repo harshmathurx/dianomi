@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const Process = () => {
     return (
-        <div className="flex flex-col items-center mt-48 mb-32">
+        <div className="flex flex-col items-center mt-48 mb-32 overflow-hidden">
             <div className="flex flex-col items-center justify-between my-14">
                 <p className="text-[#00FFC2] font-Sora font-bold text-base my-1">Development ek safar hai suhana.....</p>
                 <p className="text-[#FAFAFA] font-Sora font-bold text-3xl my-1">Here’s how you can get started, you beautiful human!</p>

@@ -17,7 +17,6 @@ export default function Home() {
       </Head>
       <svg className='w-full  absolute -top-12 -z-50 opacity-20'
         width='2560' height='4800'>
-
         <filter id='n' x='0' y='0'>
           <feTurbulence
             type='fractalNoise'
