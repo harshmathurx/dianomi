@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "MagicRetro";
-    src: url('https://fontsfree.net//wp-content/fonts/fancy/retro/FontsFree-Net-Magic-Retro.ttf');
+    src: url('../assets/MagicRetro/MagicRetro.ttf');
 }
 
 .customModal {

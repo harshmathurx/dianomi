@@ -8,8 +8,7 @@ const Navbar = () => {
 
     const { setTheme } = useWeb3ModalTheme()
     const { address, isConnected } = useAccount()
-
-
+    
     // Set modal theme
     setTheme({
         themeMode: 'dark',
