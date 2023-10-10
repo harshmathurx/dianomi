@@ -4,13 +4,13 @@
     font-family: 'MagicRetro';
     font-style: normal;
     font-weight: 400;
-    src: local('Magic Retro'), url('https://fonts.cdnfonts.com/s/86060/Magic Retro.woff') format('woff');
+    src: local('Magic Retro'), url('https://fonts.cdnfonts.com/s/86060/Magic%20Retro.woff') format('woff');
 } */
 
 
 @font-face {
     font-family: "MagicRetro";
-    src: url('../assets/MagicRetro/MagicRetro.ttf');
+    src: url('/MagicRetro.ttf');
 }
 
 .customModal {
